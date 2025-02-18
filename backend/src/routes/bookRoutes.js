@@ -9,6 +9,7 @@ router.get("/", async (req, res) => {
   try {
     const data = await bookService.searchBooks(query);
     res.json(data); // 클라이언트에 데이터 응답
+    console.log(data);
   } catch (error) {
     console.error("Error in book search:", error);
     res.status(500).json({ message: "Internal Server Error" });
